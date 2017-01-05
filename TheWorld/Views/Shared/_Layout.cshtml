@@ -14,17 +14,15 @@
     <link href="~/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    @*<link href="~/assets/css/demo.css" rel="stylesheet" />
-    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/assets/css/material-kit.css" rel="stylesheet" />
-  @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="~/lib/bootswatch/sandstone/bootstrap.min.css" />*@
-  @*<link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />**@
-  <link rel="stylesheet" href="~/css/site.css" />
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <link rel="stylesheet" href="~/css/site.css"/>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-default" style="margin-bottom: 5px;">
+    <nav class="navbar navbar-inverse navbar-static-top" style="margin-bottom: 0px;">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -75,17 +73,18 @@
     </nav>
 
 
+
+
 <div id="footer" class="container-fluid">
-        <div class="navbar navbar-inverse navbar-fixed-bottom" style="min-height: 5px;">
-            <h6 class="text-center">&copy; 2017 Trip Planner</h6>
+        <div class="navbar navbar-default navbar-fixed-bottom" style="min-height: 5px;">
+            <h6 class="text-center" style="color: grey">&copy; 2017 Trip Planner</h6>
         </div>
     </div>
 
     <div>
         @RenderBody()
     </div>
-<script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
 
     <environment names="Development">
         <script type="text/javascript" src="~/js/site.js"></script>
@@ -96,7 +95,6 @@
 
     @RenderSection("scripts", false)
 
-    <script src="~/js/site.js"></script>
 </body>
 
 </html>
