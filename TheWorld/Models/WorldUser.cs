@@ -10,5 +10,6 @@ namespace TheWorld.Models
   public class WorldUser : IdentityUser
   {
     public DateTime FirstTrip { get; set; }
+    public string Name { get; set; }
   }
 }

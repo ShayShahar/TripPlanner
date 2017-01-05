@@ -28,7 +28,7 @@ namespace TheWorld.Models
           Email = "shayscal90@gmail.com"
         };
 
-        await _userManager.CreateAsync(user, "Shay12!");
+        await _userManager.CreateAsync(user, "12345678");
       }
 
       if (!_context.Trips.Any())

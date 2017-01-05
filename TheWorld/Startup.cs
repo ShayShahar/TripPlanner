@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -48,9 +49,14 @@ namespace TheWorld
       }
 
       services.AddDbContext<WorldContext>();
-
+      
       services.AddIdentity<WorldUser, IdentityRole>(config =>
       {
+        config.Password.RequireDigit = true;
+        config.Password.RequiredLength = 8;
+        config.Password.RequireNonAlphanumeric = false;
+        config.Password.RequireUppercase = false;
+        config.Password.RequireLowercase = false;
         config.User.RequireUniqueEmail = true;
         config.Cookies.ApplicationCookie.LoginPath = "/auth/login";
         config.Cookies.ApplicationCookie.Events = new CookieAuthenticationEvents()

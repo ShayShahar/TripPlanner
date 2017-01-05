@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Win32;
 using TheWorld.Models;
 using TheWorld.Services;
 using TheWorld.ViewModels;
@@ -52,12 +53,6 @@ namespace TheWorld.Controllers.Web
     {
       return View();
     }
-  
-    public IActionResult Register()
-    {
-        return View();
-    }
-
 
     [HttpPost]
     public IActionResult Contact(ContactViewModel model)
