@@ -2,7 +2,20 @@
 @{
   ViewBag.Title = "Home Page";
 }
-<div class="row">
+
+<div>
+    <header id="top" class="header" style="padding-bottom: 300px;">
+        <div class="text-vertical-center">
+            <h1>Welcome to Trip Planner</h1>
+            <h3>
+                This site will help you build world trips.<m/h3>
+            <br><br>
+            <a asp-controller="App" asp-action="Trips" class="btn btn-lg btn-dark">Goto Your Trips</a>
+        </div>
+    </header>
+</div>
+
+@*<div class="row">
     <div class="col-md-10 col-md-offset-1">
         <div>
             <h1>Welcome to Trip Planner</h1>
@@ -15,4 +28,4 @@
             <div><br/><br/></div>
         </div>
     </div>
-</div>
+</div>*@
