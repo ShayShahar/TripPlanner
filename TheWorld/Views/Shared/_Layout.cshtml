@@ -1,0 +1,90 @@
+﻿@using Microsoft.CodeAnalysis.CSharp.Syntax
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Trip Planner - @ViewBag.Title</title>
+  <meta charset="utf-8" />
+
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="~/lib/bootswatch/sandstone/bootstrap.min.css" />
+  <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a class="navbar-brand" href="#">Hello @User.Identity.Name,</a>
+                }
+                else
+                {
+                    <a class="navbar-brand" href="#">Trip Planner</a>
+                }
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="App" asp-action="Index">Home</a></li>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a asp-action="Trips" asp-controller="App">Your Trips</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-action="Login" asp-controller="Auth">Login</a></li>
+                        <li><a asp-controller="App" asp-action="Register">Register</a></li>
+                    }
+
+                    <li><a asp-controller="App" asp-action="About">About</a></li>
+                    <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a asp-action="Logout" asp-controller="Auth">Logout</a></li>
+                    }
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+<div id="footer" class="container-fluid">
+        <div class="navbar navbar-inverse navbar-fixed-bottom" style="min-height: 5px;">
+            <h6 class="text-center">&copy; 2017 Trip Planner</h6>
+        </div>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+<script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <environment names="Development">
+        <script type="text/javascript" src="~/js/site.js"></script>
+    </environment>
+    <environment names="Production,Staging">
+        <script type="text/javascript" src="~/lib/_app/site.js"></script>
+    </environment>
+
+    @RenderSection("scripts", false)
+
+    <script src="~/js/site.js"></script>
+</body>
+
+</html>

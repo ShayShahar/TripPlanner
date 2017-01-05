@@ -1,0 +1,11 @@
+{
+  "MailSettings": {
+    "ToAddress": "shayscal90@gmail.com"
+  },
+  "ConnectionStrings": {
+    "WorldContextConnection": "Server=(localdb)\\MSSQLLocalDb;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveResultSets=true;"
+  },
+    "Keys": {
+        "BingKey": "Aj93G8OzEDh7WEcyuJczaGHhNWfQefK2aKry_w1mQw2LUJAMfC-UvYbfGVzW1ZG0"
+    }
+}
