@@ -4,7 +4,7 @@
   "use strict";
 
   // Creating the Module
-    angular.module("app-trips", ["simpleControls", "ngRoute"])
+    angular.module("app-trips", ["simpleControls", "ngRoute", "moment-picker"])
     .config(function ($routeProvider) {
         
       $routeProvider.when("/", {
