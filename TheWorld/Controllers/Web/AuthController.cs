@@ -60,7 +60,13 @@ namespace TheWorld.Controllers.Web
                 await m_signInManager.SignInAsync(user, isPersistent: false);
                 return RedirectToAction("Index", "App");
             }
-         }
+                var resultsError = result.Errors.Aggregate("\n", (current, t) => current + (t.Description + "\n"));
+
+                var errorStr = string.Format("Registration Failed. {0}", resultsError);
+
+                    ModelState.AddModelError("", errorStr);
+            }
+
 
          // If we got this far, something failed, redisplay form
          return View(p_model);
