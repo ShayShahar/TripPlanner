@@ -8,7 +8,6 @@
     .controller("tripsController", tripsController);
 
   function tripsController($http) {
-
     var vm = this;
 
     vm.trips = [];
@@ -17,7 +16,9 @@
 
     vm.errorMessage = "";
     vm.isBusy = true;
-
+    vm.deleteTrip = function (tripName) {
+        alert(tripName);
+    };
     $http.get("/api/trips")
       .then(function (response) {
         // Success
